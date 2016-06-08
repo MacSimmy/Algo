@@ -1,6 +1,7 @@
 package puzzles;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Created by mahendra.chhimwal on 6/1/2016.
@@ -88,7 +89,8 @@ public class GenUtil {
 
     public static void getFirstHighest(int number) {
         char[] numDigitsChar = ("" + number).toCharArray();
-        int[] numDigits = new int[numDigitsChar.length];
+        Integer[] numDigits = new Integer[numDigitsChar.length];
+
         for (int i = 0; i < numDigitsChar.length; i++) {
             numDigits[i] = Integer.parseInt(String.valueOf(numDigitsChar[i]));
         }
@@ -107,6 +109,14 @@ public class GenUtil {
                     numDigits[i] = numDigits[j];
                     numDigits[j] = temp;
                     isNumFound = true;
+                    if(j!=numDigits.length-1) {
+                        Arrays.sort(numDigits, j + 1, numDigits.length, new Comparator<Integer>() {
+                            @Override
+                            public int compare(Integer o1, Integer o2) {
+                                return o1.compareTo(o2);
+                            }
+                        });
+                    }
                     break;
                 }
             }
@@ -119,7 +129,7 @@ public class GenUtil {
     }
 
 
-    private static int getNumFromArray(int[] a) {
+    private static int getNumFromArray(Integer[] a) {
         int number = 0;
         for (int i = 0; i < a.length; i++) {
             number = number + a[i] * (int) (Math.pow(10, a.length - i - 1));
