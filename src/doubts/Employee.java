@@ -1,5 +1,7 @@
 package doubts;
 
+import puzzles.GenUtil;
+
 /**
  * Created by mahendra.chhimwal on 5/30/2016.
  */
@@ -39,8 +41,13 @@ public class Employee implements Comparable<Employee>{
 
     public void setSalary(double salary) {
         this.salary = salary;
+        GenUtil genUtil = new GenUtil();
+        genUtil.checkOurEmployree(this);
     }
 
+    public String toString(){
+        return this.name+" " +this.id+" " +this.address +" " +this.salary;
+    }
 
     @Override
     public int compareTo(Employee o) {

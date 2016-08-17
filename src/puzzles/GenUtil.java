@@ -1,12 +1,22 @@
 package puzzles;
 
+import doubts.Employee;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by mahendra.chhimwal on 6/1/2016.
  */
 public class GenUtil {
+
+    public void checkOurEmployree(Employee employee){
+
+    }
+
+    private Employee employee = new Employee();
 
     public static int[] generateBinary(int maxDecNum) {
         int[] binary = null;
@@ -82,11 +92,6 @@ public class GenUtil {
         return outArray;
     }
 
-
-    public static void printPermutations(String input) {
-
-    }
-
     public static void getFirstHighest(int number) {
         char[] numDigitsChar = ("" + number).toCharArray();
         Integer[] numDigits = new Integer[numDigitsChar.length];
@@ -137,5 +142,13 @@ public class GenUtil {
         return number;
     }
 
+
+    public void printPermutations(String input) {
+        char[]a = input.toCharArray();
+        List<String>permuts = new ArrayList<>();
+
+
+
+    }
 
 }
